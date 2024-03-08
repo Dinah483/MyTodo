@@ -1,0 +1,72 @@
+@import "./Variables.scss";
+
+// Experimental
+ul.kit-tabs {
+  margin: 0;
+
+  &::before {
+    content: none;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+
+    &:not(:first-child) {
+      margin-left: 5px;
+    }
+
+    &.uk-active {
+      a {
+        color: $white-color;
+        background-color: $primary-color;
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.1);
+
+        .edit-icon {
+          border-radius: 10px;
+          margin-left: 4px;
+          cursor: pointer;
+          transition: border 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            background-color: $hover-color;
+          }
+        }
+
+        .delete-icon {
+          border-radius: 10px;
+          margin-left: 4px;
+          cursor: pointer;
+          transition: border 0.3s ease, box-shadow 0.3s ease;
+
+          &:hover {
+            background-color: $hover-color;
+          }
+        }
+      }
+    }
+
+    a {
+      border-radius: $border-radius;
+      font-size: $font-size;
+      font-weight: $font-weight-semibold;
+      background-color: #f0f0f0;
+      color: $grey-color;
+      text-transform: capitalize;
+      border: 0;
+      transition: 0.3s all ease;
+
+      // .edit-icon {
+      //   border-radius: 10px;
+      //   margin-left: 4px;
+      //   cursor: pointer;
+      //   border: 2px solid $primary-color;
+      //   transition: border 0.3s ease, box-shadow 0.3s ease;
+      //   &:hover {
+      //     border: 2px solid $primary-color;
+      //     background-color: $hover-color;
+      //   }
+      // }
+    }
+  }
+}

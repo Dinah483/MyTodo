@@ -1,0 +1,62 @@
+@import "./Variables.scss";
+
+// Modals
+.custom-modal-style {
+  //   .uk-modal-dialog {
+  //     // border-radius: $border-radius;
+  //   }
+
+  .uk-modal-title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-semibold;
+
+    // Display on one-line
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  .sub-heading {
+    margin-bottom: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+
+.uk-modal-footer {
+  display: flow-root;
+  padding: 15px 30px;
+  background: #fff;
+  border-top: 1px solid #e5e5e5;
+  border-radius: 5px;
+
+  .uk-button-default {
+    background-color: $danger-color;
+    color: $white-color;
+    border: none;
+    border-radius: 4px;
+    padding: 0 32px;
+    font-size: .875rem;
+    text-transform: capitalize;
+
+    &:hover {
+      box-shadow: 0 10px 14px rgba($danger-color, 0.4);
+    }
+  }
+
+  .uk-button-primary {
+    color: $white-color;
+    border: none;
+    border-radius: 4px;
+    padding: 0 32px;
+    font-size: .875rem;
+    text-transform: capitalize;
+  }
+}

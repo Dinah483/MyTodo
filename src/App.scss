@@ -1,0 +1,249 @@
+// @import "./shared/styles/Variables.scss";
+@import "./shared/styles/Kit.scss";
+
+.app {
+  .section-toolbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    &>* {
+      margin-bottom: 0;
+    }
+
+    .section-heading {
+      font-weight: $font-weight-bold;
+    }
+
+    .controls {
+      &>* {
+        border-radius: $border-radius;
+        margin-bottom: 0;
+      }
+    }
+
+    @media only screen and (min-width: 640px) {
+      flex-direction: row;
+      align-items: center;
+
+      * {
+        margin-bottom: 0.5em !important;
+      }
+
+      .controls {
+
+        &>*,
+        button {
+          margin-bottom: 0.5em;
+        }
+      }
+    }
+  }
+
+  // Bad Practive | Quick fix
+  .objective-name {
+    .objective-persepctive {
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+      color: $white-color;
+      background-color: $primary-color;
+      padding: 3px 5px;
+      line-height: 1;
+      width: fit-content;
+    }
+  }
+
+  // Bad Practive | Quick fix
+  div.measure-table {
+    margin: -10px;
+    padding: 10px;
+
+    table {
+      border-collapse: separate;
+      border-spacing: 0 5px;
+      margin: 0;
+
+      .kit-sticky-column {
+        position: sticky;
+        left: -10px;
+        background: $white-color;
+      }
+
+      thead {
+        th {
+          padding-bottom: 5px;
+          padding-top: 5px;
+        }
+      }
+
+      tbody {
+        tr {
+          background: $white-color;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        tr.kit-sticky-column {
+          background: $white-color;
+        }
+      }
+    }
+  }
+}
+
+// Bad Practive | Quick fix
+.grey {
+  background-color: $grey-color !important;
+}
+
+.purple {
+  background-color: $purple-color !important;
+}
+
+.blue {
+  background-color: $blue-color !important;
+}
+
+.green {
+  background-color: $green-color !important;
+}
+
+.red {
+  background-color: $red-color !important;
+}
+
+.uk-modal-dialog {
+  border-radius: $border-radius;
+}
+
+.step {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background-color: $white-color;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+
+  &--stage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-bottom: 2px transparent solid;
+    text-align: left;
+    min-width: 100px;
+    width: 100%;
+    background: none;
+    outline: 0;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e4eefd;
+
+      .step--stage__bubble {
+        color: $white-color;
+      }
+    }
+
+    &__bubble {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 25px;
+      height: 25px;
+      border: 4px solid $primary-color;
+      background-color: $primary-color;
+      border-radius: 50%;
+      margin-right: 10px;
+      transition: all 0.3s ease-in-out;
+
+      &__content {
+        color: $white-color;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        inset: -10px;
+        border: 3px solid transparent;
+        border-radius: 50%;
+        background: none;
+        z-index: 0;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    &__content {
+      position: relative;
+
+      .label {
+        font-size: $font-size-xs;
+        font-weight: $font-weight-semibold;
+        text-transform: uppercase;
+        line-height: 1;
+        color: $black-color;
+        margin-top: 0px;
+        margin-bottom: 0px;
+      }
+
+      .title {
+        font-size: $font-size;
+        font-weight: $font-weight-semibold;
+        line-height: 1;
+        margin-top: 0px;
+        margin-bottom: 5px;
+        color: $black-color;
+      }
+    }
+
+    &__open {
+      background-color: #e4eefd !important;
+      border-bottom: 2px $primary-color solid;
+    }
+
+    &__in-progress {
+      background-color: #e4eefd;
+
+      .step--stage__bubble {
+        color: $white-color;
+        border: 4px solid $warning-color;
+        background-color: $warning-color;
+        &::before {
+          border-color: $warning-color;
+        }
+      }
+    }
+
+    &__submitted {
+      background-color: #e4eefd;
+
+      .step--stage__bubble {
+        color: $white-color;
+        border: 4px solid $primary-color;
+        background-color: $primary-color;
+        &::before {
+          border-color: #65a1f2;
+        }
+      }
+    }
+
+    &__completed,
+    &__approved {
+      background-color: #e9fbeb;
+      .step--stage__bubble {
+        color: $white-color;
+        border: 4px solid $success-color;
+        background-color: $success-color;
+      }
+    }
+
+    &__pending {
+      background-color: #f8f8f9;
+      .step--stage__bubble {
+        color: $white-color;
+        border: 4px solid $grey-color;
+        background-color: $grey-color;
+      }
+    }
+  }
+}
